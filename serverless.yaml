@@ -1,0 +1,30 @@
+service: portfolio-contact-producer
+
+package:
+  individually: true
+  
+provider:
+  name: aws
+  runtime: python3.9
+  region: us-east-1
+  stage: ${opt:stage, "dev"}
+
+plugins:
+  - serverless-offline
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    usePoetry: true
+
+functions:
+  app:
+    handler: lambda.handler
+    events:
+      - http:
+          method: any
+          path: / 
+      - http:
+          method: any
+          path: /{proxy+}

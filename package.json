@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-email-semder-worker",
+  "version": "1.0.0",
+  "author": "OscarSilvaOfficial",
+  "dependencies": {
+    "serverless-python-requirements": "^5.0.1"
+  },
+  "devDependencies": {
+    "serverless-offline": "^8.5.0"
+  }
+}
